@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import { Connect } from "./utils/db.js";
 
 dotenv.config();
 
@@ -17,5 +18,6 @@ app.get("/", (_, res) => {
 });
 
 app.listen(PORT, () => {
+  Connect(process.env.MONGODB_URI);
   console.log("listening on port " + PORT);
 });
