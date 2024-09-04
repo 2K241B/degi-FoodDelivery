@@ -34,3 +34,13 @@ export const getUser = async (req, res) => {
     console.log(error);
   }
 };
+
+export const userDelete = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const response = await userModel.findByIdAndDelete(id);
+    res.status(200).send("user deleted");
+  } catch (error) {
+    console.log(error);
+  }
+};
