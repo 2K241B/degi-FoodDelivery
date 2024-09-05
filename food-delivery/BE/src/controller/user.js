@@ -42,5 +42,18 @@ export const userDelete = async (req, res) => {
     res.status(200).send("user deleted");
   } catch (error) {
     console.log(error);
+    res.status(500).send(error.message);
+  }
+};
+
+export const updateUser = async (req, res) => {
+  const { id } = req.params;
+  const updatedUser = req.body;
+  try {
+    const response = await userModel.findByIdAndUpdate(id, updatedUser);
+    res.send(response);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error.message);
   }
 };
