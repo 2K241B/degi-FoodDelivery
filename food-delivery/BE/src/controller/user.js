@@ -44,3 +44,12 @@ export const userDelete = async (req, res) => {
     console.log(error);
   }
 };
+
+export const getAllUsers = async (req, res) => {
+  try {
+    const response = await userModel.find();
+    res.send(response);
+  } catch (error) {
+    console.log(error);
+  }
+};
