@@ -57,3 +57,12 @@ export const updateUser = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
+
+export const getAllUsers = async (req, res) => {
+  try {
+    const response = await userModel.find();
+    res.send(response);
+  } catch (error) {
+    console.log(error);
+  }
+};
