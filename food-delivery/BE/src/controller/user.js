@@ -34,7 +34,7 @@ export const getUser = async (req, res) => {
   }
 };
 
-export const userDelete = async (req, res) => {
+export const deleteUser = async (req, res) => {
   const { id } = req.params;
   try {
     const response = await userModel.findByIdAndDelete(id);

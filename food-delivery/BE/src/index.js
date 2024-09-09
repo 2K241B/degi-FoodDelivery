@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import { userRouter } from "./routes/user.js";
 import mongoose from "mongoose";
+import { authRouter } from "./routes/auth.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/user", userRouter);
+app.use("/auth", authRouter);
 
 app.get("/", (_, res) => {
   return res.status(200).json("hello world");
