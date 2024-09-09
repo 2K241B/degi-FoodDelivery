@@ -17,14 +17,19 @@ export const login = async (req, res) => {
     const isMatch = bcrypt.compare(password, user.password);
 
     if (!isMatch)
-      return res.status(403).send(message, "username or password is wrong");
+      return res.status(403).send({ message: "username or password wrong" });
 
     const token = jwt.sign({ user }, SECRET_KEY);
-    console.log(token, "token");
-
-    res.status(200).cookie("token", token).end();
+    res
+      .cookie("token", token, {
+        httpOnly: true,
+        secure: false,
+        sameSite: "strict",
+        maxAge: 1000 * 60 * 60,
+      })
+      .json({ message: "Login successful" });
   } catch (error) {
-    console.log(error);
-    res.status(500).send(error.message);
+    console.error(error);
+    res.status(500).send("Server error");
   }
 };
