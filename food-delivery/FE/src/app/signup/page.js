@@ -14,28 +14,25 @@ export default function Home() {
           <div className="flex flex-col gap-4">
             <div>
               <p className="text-[14px]">Нэр </p>
-              <Input className="h-[48px]" palceholder={"Нэрээ оруулна уу"} />
+              <Input className="h-[48px]" placeholder="Нэрээ оруулна уу" />
             </div>
             <div>
               <p className="text-[14px]">И-мэйл </p>
               <Input
                 className="h-[48px]"
-                palceholder={"И-мэйл хаягаа оруулна уу"}
+                placeholder="И-мэйл хаягаа оруулна уу"
               />
             </div>
             <div>
               <p className="text-[14px]">Хаяг </p>
-              <Input
-                className="h-[48px]"
-                palceholder={"Та хаягаа оруулна уу"}
-              />
+              <Input className="h-[48px]" placeholder="Та хаягаа оруулна уу" />
             </div>
             <div>
               <p className="text-[14px]">Нууц үг </p>
               <Input
                 className="h-[48px]"
                 type="password"
-                palceholder={"Нууц үгээ оруулна уу"}
+                placeholder="Нууц үгээ оруулна уу"
               />
             </div>
             <div>
@@ -43,7 +40,7 @@ export default function Home() {
               <Input
                 className="h-[48px]"
                 type="password"
-                palceholder={"Нууц үгээ оруулна уу"}
+                placeholder="Нууц үгээ оруулна уу"
               />
             </div>
             <div className="flex items-center gap-2">

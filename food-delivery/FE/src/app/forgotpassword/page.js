@@ -8,7 +8,7 @@ export default function Home() {
       <div className="w-[448px] h-[549px] ">
         <div className="flex flex-col p-8 gap-[48px]">
           <div className="w-full flex flex-col items-center">
-            <h1 className="text-[28px]">Нэвтрэх</h1>
+            <h1 className="text-[28px]">Нууц үг сэргээх</h1>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -16,24 +16,10 @@ export default function Home() {
               <p>Имэйл </p>
               <Input placeholder="Имэйл хаягаа оруулна уу" />
             </div>
-            <div>
-              <p>Нууц үг </p>
-              <Input placeholder="Нууц үгээ оруулна уу" type="password" />
-            </div>
-            <Link
-              href="/forgotpassword"
-              className="text-[14px] text-[#3F4145] text-end "
-            >
-              Нууц үг сэргээх
-            </Link>
           </div>
           <div className="flex w-full flex-col gap-8  items-center">
             <Button className="w-full bg-[#EEEFF2] text-[#1C20243D] h-[48px]">
-              Нэвтрэх
-            </Button>
-            <p>Эсвэл</p>
-            <Button className="w-full h-[48px] bg-white border-solid border-[1px] border-green-300 text-black">
-              Бүртгүүлэх
+              Үргэлжлүүлэх
             </Button>
           </div>
         </div>
