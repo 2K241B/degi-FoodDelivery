@@ -6,6 +6,7 @@ import {
   getUser,
   deleteUser,
 } from "../controller/user.js";
+import { checkRole, checkToken } from "../controller/middleWareAuth.js";
 
 const userRouter = Router();
 
@@ -14,6 +15,6 @@ userRouter
   .get("/:id", getUser)
   .delete("/:id", deleteUser)
   .put("/:id", updateUser)
-  .get("/", getAllUsers);
+  .get("/", checkToken, getAllUsers);
 
 export { userRouter };
