@@ -7,6 +7,7 @@ import { EyeIcon, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import _ from "lodash";
+import Link from "next/link";
 
 const Login = () => {
   const router = useRouter();
@@ -26,7 +27,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axiosInstance.post("/auth/login", {
         email: formData.email,
@@ -54,7 +54,21 @@ const Login = () => {
               className="bg-[#F7F7F8] text-[#8B8E95]"
               placeholder="Имэйл хаягаа оруулна уу"
               required
-            />
+          <div className="flex flex-col gap-4">
+            <div>
+              <p>Имэйл </p>
+              <Input placeholder="Имэйл хаягаа оруулна уу" />
+            </div>
+            <div>
+              <p>Нууц үг </p>
+              <Input placeholder="Нууц үгээ оруулна уу" type="password" />
+            </div>
+            <Link
+              href="/forgotpassword"
+              className="text-[14px] text-[#3F4145] text-end "
+            >
+              Нууц үг сэргээх
+            </Link>
           </div>
           <div>
             <Label htmlFor="password">Нууц үг</Label>

@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
-=======
 
 export default function Home() {
   return (
@@ -9,14 +7,17 @@ export default function Home() {
       <div className="w-[448px] h-[549px] ">
         <div className="flex flex-col p-8 gap-[48px]">
           <div className="w-full flex flex-col items-center">
-            <h1 className="text-[28px]">Нууц үг сэргээх</h1>
+            <h1 className="text-[28px]">Шинэ нууц үг зохиох </h1>
           </div>
-
+          <p>Таны example@pinecone.mn хаяг руу сэргээх код илгээх болно.</p>
           <div className="flex flex-col gap-4">
             <div>
-              <p>Имэйл </p>
-              <p className="text-[14px]">Имэйл </p>
-              <Input placeholder="Имэйл хаягаа оруулна уу" />
+              <p className="text-[14px]">Нууц үг </p>
+              <Input placeholder="**********" />
+            </div>
+            <div>
+              <p className="text-[14px]">Нууц үг давтах </p>
+              <Input placeholder="**********" />
             </div>
           </div>
           <div className="flex w-full flex-col gap-8  items-center">
