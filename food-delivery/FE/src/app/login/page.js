@@ -64,12 +64,6 @@ const Login = () => {
                 <p>Нууц үг </p>
                 <Input placeholder="Нууц үгээ оруулна уу" type="password" />
               </div>
-              <Link
-                href="/forgotpassword"
-                className="text-[14px] text-[#3F4145] text-end "
-              >
-                Нууц үг сэргээх
-              </Link>
             </div>
             <div>
               <Label htmlFor="password">Нууц үг</Label>
@@ -88,7 +82,12 @@ const Login = () => {
                 }
               />
             </div>
-            <Label className="text-end">Нууц үг сэргээх</Label>
+            <Link
+              href="/forgotpassword"
+              className="text-[14px] text-[#3F4145] text-end "
+            >
+              Нууц үг сэргээх
+            </Link>
           </div>
           <div className="flex flex-col gap-8 text-center">
             <Button

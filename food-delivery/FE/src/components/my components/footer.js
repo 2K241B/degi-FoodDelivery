@@ -4,10 +4,10 @@ import { InstagramLogo } from "@/components/my components/instagramLogo";
 import { PineconeLogoWhite } from "@/components/my components/pinoconeLogoWhite";
 import { TwitterLogo } from "@/components/my components/twitterLogo";
 
-export default function Home() {
+export const Footer = () => {
   return (
-    <div className="w-full h-screen flex items-end">
-      <div className="bg-[#18BA51] w-full flex items-end absolute">
+    <div className="w-full relative flex items-end ">
+      <div className="bg-[#18BA51] w-full flex top-0 items-end absolute">
         <div className="h-[545px] w-[1440px] mx-auto">
           <div className="w-full h-full flex flex-col gap-10 px-[120px] mt-[114px]">
             <div className="flex items-center gap-2 justify-center">
@@ -40,4 +40,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
