@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
+=======
 
 export default function Home() {
   return (
@@ -12,6 +14,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-4">
             <div>
+              <p>Имэйл </p>
               <p className="text-[14px]">Имэйл </p>
               <Input placeholder="Имэйл хаягаа оруулна уу" />
             </div>
@@ -26,5 +29,3 @@ export default function Home() {
     </div>
   );
 }
-
-// Таны example@pinecone.mn хаяг руу сэргээх код илгээх болно.
