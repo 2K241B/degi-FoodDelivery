@@ -15,6 +15,6 @@ userRouter
   .get("/:id", getUser)
   .delete("/:id", deleteUser)
   .put("/:id", updateUser)
-  .get("/", checkToken, getAllUsers);
+  .get("/", checkToken, checkRole, getAllUsers);
 
 export { userRouter };
