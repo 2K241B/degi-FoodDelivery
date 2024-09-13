@@ -54,56 +54,58 @@ const Login = () => {
               className="bg-[#F7F7F8] text-[#8B8E95]"
               placeholder="Имэйл хаягаа оруулна уу"
               required
-          <div className="flex flex-col gap-4">
-            <div>
-              <p>Имэйл </p>
-              <Input placeholder="Имэйл хаягаа оруулна уу" />
-            </div>
-            <div>
-              <p>Нууц үг </p>
-              <Input placeholder="Нууц үгээ оруулна уу" type="password" />
-            </div>
-            <Link
-              href="/forgotpassword"
-              className="text-[14px] text-[#3F4145] text-end "
-            >
-              Нууц үг сэргээх
-            </Link>
-          </div>
-          <div>
-            <Label htmlFor="password">Нууц үг</Label>
-            <Input
-              name="password"
-              type={isHidePassword ? "password" : "text"}
-              onChange={debounceFn}
-              className="bg-[#F7F7F8] text-[#8B8E95]"
-              placeholder="Нууц үг"
-              required
-              endIcon={
-                <Icon
-                  onClick={togglePasswordVisibility}
-                  className="cursor-pointer"
-                />
-              }
             />
+            <div className="flex flex-col gap-4">
+              <div>
+                <p>Имэйл </p>
+                <Input placeholder="Имэйл хаягаа оруулна уу" />
+              </div>
+              <div>
+                <p>Нууц үг </p>
+                <Input placeholder="Нууц үгээ оруулна уу" type="password" />
+              </div>
+              <Link
+                href="/forgotpassword"
+                className="text-[14px] text-[#3F4145] text-end "
+              >
+                Нууц үг сэргээх
+              </Link>
+            </div>
+            <div>
+              <Label htmlFor="password">Нууц үг</Label>
+              <Input
+                name="password"
+                type={isHidePassword ? "password" : "text"}
+                onChange={debounceFn}
+                className="bg-[#F7F7F8] text-[#8B8E95]"
+                placeholder="Нууц үг"
+                required
+                endIcon={
+                  <Icon
+                    onClick={togglePasswordVisibility}
+                    className="cursor-pointer"
+                  />
+                }
+              />
+            </div>
+            <Label className="text-end">Нууц үг сэргээх</Label>
           </div>
-          <Label className="text-end">Нууц үг сэргээх</Label>
-        </div>
-        <div className="flex flex-col gap-8 text-center">
-          <Button
-            disabled={
-              formData.email.length > 0 && formData.password.length > 0
-                ? false
-                : true
-            }
-            type="submit"
-          >
-            Нэвтрэх
-          </Button>
-          <Label>Эсвэл</Label>
-          <Button className="bg-transparent border border-[#18BA51] text-[#272727]">
-            Бүртгүүлэх
-          </Button>
+          <div className="flex flex-col gap-8 text-center">
+            <Button
+              disabled={
+                formData.email.length > 0 && formData.password.length > 0
+                  ? false
+                  : true
+              }
+              type="submit"
+            >
+              Нэвтрэх
+            </Button>
+            <Label>Эсвэл</Label>
+            <Button className="bg-transparent border border-[#18BA51] text-[#272727]">
+              Бүртгүүлэх
+            </Button>
+          </div>
         </div>
       </div>
     </form>
