@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 
 export default function Home() {
   return (
-    <div className="w-[1440px] h-screen flex mx-auto items-center justify-center">
+    <div className="w-[1440px] flex mx-auto items-center justify-center">
       <div className="w-[448px] h-[549px] ">
         <div className="flex flex-col p-8 gap-[48px]">
           <div className="w-full flex flex-col items-center">
