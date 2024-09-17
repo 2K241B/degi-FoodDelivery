@@ -1,29 +1,45 @@
-import Image from "next/image";
-import Picture from "../components/headerFoodPic.png";
-import { HeaderOverlay } from "@/components/my components/headerOverlay";
+import { CategoryFeature } from "@/components/my components/categoryFeatureComponent";
+import { MainHeaderSection } from "@/components/my components/mainHeaderSection";
+import { SvgBook, SvgClock, SvgFood } from "@/components/my components/svg";
 
 export default function Home() {
+  const Data = [
+    {
+      title: "Хүргэлтийн төлөв хянах",
+      text: "Захиалга бэлтгэлийн явцыг хянах",
+      svg: <SvgBook />,
+    },
+    {
+      title: "Шуурхай хүргэлт",
+      text: "Захиалга бэлтгэлийн явцыг хянах",
+      svg: <SvgClock />,
+    },
+    {
+      title: "Эрүүл, баталгаат орц",
+      text: "Захиалга бэлтгэлийн явцыг хянах",
+      svg: <SvgFood />,
+    },
+    {
+      title: "Хоолны өргөн сонголт",
+      text: "Захиалга бэлтгэлийн явцыг хянах",
+      svg: <SvgBook />,
+    },
+  ];
+
   return (
-    <div className="w-full h-[788px] bg-[#18BA51] relative">
-      <div className="w-[1440px] h-full flex px-[120px] items-center mx-auto justify-between absolute">
-        <div className="w-[384px] flex flex-col gap-[23px]">
-          <h1 className="text-white text-[55px] font-semibold leading-none">
-            Pinecone Food delivery
-          </h1>
-          <div className="w-full h-[1px] bg-white" />
-          <p className="text-white">
-            Horem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
-        <Image
-          src={Picture}
-          width={588}
-          height={438}
-          quality={100}
-          alt="Picture of the author"
-        />
+    <div>
+      <MainHeaderSection />
+      <div className="flex w-[1440px] mx-auto px-[120px] py-[122px] justify-between">
+        {Data.map((e, i) => {
+          return (
+            <CategoryFeature
+              title={Data[i].title}
+              text={Data[i].text}
+              svg={Data[i].svg}
+            />
+          );
+        })}
       </div>
-      <HeaderOverlay />
     </div>
   );
 }
