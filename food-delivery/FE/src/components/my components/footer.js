@@ -1,8 +1,6 @@
-import { FacebookLogo } from "@/components/my components/facebookLogo";
-import { FooterOverlay } from "@/components/my components/footerOverlay";
-import { InstagramLogo } from "@/components/my components/instagramLogo";
-import { PineconeLogoWhite } from "@/components/my components/pinoconeLogoWhite";
-import { TwitterLogo } from "@/components/my components/twitterLogo";
+import Link from "next/link";
+import { SvgInstagram, SvgPineconeWhite, SvgTwitter, SvgFacebook } from "./svg";
+import { FooterOverlay } from "./footerOverlay";
 
 export const Footer = () => {
   return (
@@ -11,7 +9,7 @@ export const Footer = () => {
         <div className="h-[545px] w-[1440px] mx-auto">
           <div className="w-full h-full flex flex-col gap-10 px-[120px] mt-[114px]">
             <div className="flex items-center gap-2 justify-center">
-              <PineconeLogoWhite />
+              <SvgPineconeWhite />
               <p className="text-[20px] text-white">Food Delivery</p>
             </div>
             <div className="flex justify-between text-white">
@@ -23,9 +21,11 @@ export const Footer = () => {
               <p>Нууцлалын бодлого</p>
             </div>
             <div className="flex items-center gap-[18px] justify-center">
-              <FacebookLogo />
-              <InstagramLogo />
-              <TwitterLogo />
+              <SvgFacebook />
+
+              <SvgInstagram />
+
+              <SvgTwitter />
             </div>
             <span className="w-full h-[1px] bg-white" />
             <div className="w-full flex items-center flex-col gap-2 text-white ">
