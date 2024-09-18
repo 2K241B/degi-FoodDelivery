@@ -20,7 +20,7 @@ app.use(cors());
 
 app.use("/user", userRouter);
 app.use("/auth", authRouter);
-app.get("/mail", sendMail);
+app.post("/mail", sendMail);
 
 app.get("/", (_, res) => {
   return res.status(200).json("hello world");

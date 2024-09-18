@@ -1,3 +1,5 @@
+import { userModule, otpModule } from "../schema/user.js";
+
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
@@ -12,22 +14,38 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendMail = async (req, res) => {
+  const { email } = req.body;
   try {
-    const Info = await transporter.sendMail({
-      from: '"Maddison Foo Koch 👻" <st21aye@gmail.com>', // sender address
-      to: "dddelgersaihan@gmail.com", // list of receivers
-      subject: "Hello ✔", // Subject line
-      text: "Hello world?", // plain text body
-      html: "<b>Hello World</b>", // html body
-    });
+    const user = userModule.findOne({ email });
 
-    if (Info.messageId) {
-      res.status(200).send({ success: true });
-    } else {
-      res.status(404).send({ error: "Message didn't send" });
-    }
+    if (!user) return res.status(404).json("user not found");
+
+    const generatedOTP = Math.floor(Math.random() * 9000 + 1000);
+
+    await otpModule.create({ email, otp: generatedOTP });
+
+    const mailOptions = {
+      from: "st21aye@gmail.com",
+      to: email,
+      subject: "Password Rest OTP",
+      text: `Your OTP for password rest it: ${generatedOTP}`,
+    };
+
+    const Info = await transporter.sendMail(mailOptions);
   } catch (error) {
     res.status(404).send({ error: error });
     console.error(error);
   }
+};
+
+const verifyOtp = async (req, res) => {
+  const { email, otp } = req.body;
+  try {
+    const response = await otpModule.findOne({ email });
+
+    if (!response) return res.status(404).json("otp expired");
+
+    if (response.data.otp === otp) {
+    }
+  } catch (error) {}
 };
