@@ -1,11 +1,11 @@
 import { Schema, model } from "mongoose";
 
-const otpSchema = new Schema({
+const accessTokenSchema = new Schema({
   email: {
     type: String,
     required: true,
   },
-  otp: {
+  accessToken: {
     type: String,
     required: true,
   },
@@ -16,4 +16,4 @@ const otpSchema = new Schema({
   },
 });
 
-export const otpModel = new model("otps", otpSchema);
+export const accessTokenModel = model("accessTokens", accessTokenSchema);
