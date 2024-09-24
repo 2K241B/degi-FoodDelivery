@@ -5,16 +5,16 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-export const login = async (req, res) => {
+export const Login = async (req, res) => {
   const { email, password } = req.body;
 
   const SECRET_KEY = process.env.SECRET_KEY;
 
   try {
     const user = await userModel.findOne({ email });
-    if (!user) return res.status(400).send(message, "user not found");
+    if (!user) return res.status(400).send({ message: "User not found" });
 
-    const isMatch = bcrypt.compare(password, user.password);
+    const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch)
       return res.status(403).send({ message: "username or password wrong" });
@@ -30,6 +30,6 @@ export const login = async (req, res) => {
       .json({ message: "Login successful" });
   } catch (error) {
     console.error(error);
-    res.status(500).send("Server error");
+    res.status(500).send(error.message);
   }
 };

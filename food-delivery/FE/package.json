@@ -29,6 +29,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/react": "^18.3.8",
     "eslint": "^8",
     "eslint-config-next": "14.2.7",
     "postcss": "^8",

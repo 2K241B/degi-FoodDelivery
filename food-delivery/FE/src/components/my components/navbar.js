@@ -30,7 +30,7 @@ const StyleSvg = "text-[14px] font-bold flex items-center gap-2 px-4 py-2";
 export const Navbar = () => {
   const pathname = usePathname();
   return (
-    <div className="px-[91px] py-2 flex justify-between items-center min-w-[1258px] m-auto">
+    <div className="px-[91px] py-2 flex justify-between items-center w-[1440px] m-auto">
       <div className="flex items-center gap-6">
         <Link href="/">
           <SvgPinecone />
@@ -65,7 +65,7 @@ export const Navbar = () => {
         </div>
         <div className={StyleSvg}>
           <SvgProfile />
-          <p>Нэвтрэх</p>
+          <Link href="/login">Нэвтрэх</Link>
         </div>
       </div>
     </div>

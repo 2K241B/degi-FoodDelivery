@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { axiosInstance } from "../../lib/utils";
-import { EyeIcon, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import _ from "lodash";
 import Link from "next/link";
+import { EyeIcon, EyeOff } from "@/components/my components/svg";
 
 const Login = () => {
   const router = useRouter();
@@ -55,16 +55,6 @@ const Login = () => {
               placeholder="Имэйл хаягаа оруулна уу"
               required
             />
-            <div className="flex flex-col gap-4">
-              <div>
-                <p>Имэйл </p>
-                <Input placeholder="Имэйл хаягаа оруулна уу" />
-              </div>
-              <div>
-                <p>Нууц үг </p>
-                <Input placeholder="Нууц үгээ оруулна уу" type="password" />
-              </div>
-            </div>
             <div>
               <Label htmlFor="password">Нууц үг</Label>
               <Input
@@ -102,7 +92,7 @@ const Login = () => {
             </Button>
             <Label>Эсвэл</Label>
             <Button className="bg-transparent border border-[#18BA51] text-[#272727]">
-              Бүртгүүлэх
+              <Link href="/signup">Бүртгүүлэх</Link>
             </Button>
           </div>
         </div>
