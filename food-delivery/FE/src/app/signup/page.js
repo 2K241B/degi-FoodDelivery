@@ -60,3 +60,8 @@ export default function Home() {
     </div>
   );
 }
+
+// NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=duxxl4jrr
+// NEXT_PUBLIC_API_KEY=556692895391531;
+// NEXT_PUBLIC_API_SECRET=T1qIESczFze - e9_TZW2pS7lTEyU;
+// NEXT_PUBLIC_CLOUDINARY_URL=cloudinary://556692895391531:T1qIESczFze-e9_TZW2pS7lTEyU@duxxl4jrr
